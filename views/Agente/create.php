@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\agente */
 
-$this->title = 'Create Agente';
+$this->title = 'Crear Agente';
 $this->params['breadcrumbs'][] = ['label' => 'Agentes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
