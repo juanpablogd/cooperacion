@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\linea */
 
-$this->title = 'Create Linea';
+$this->title = 'Crear Línea';
 $this->params['breadcrumbs'][] = ['label' => 'Lineas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
