@@ -56,13 +56,13 @@ class cooperacion extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'linea_descripcion' => 'Linea Descripcion',
-            'link_linea' => 'Link Linea',
-            'id_app_p_modalidad' => 'Id App P Modalidad',
-            'id_app_p_agente' => 'Id App P Agente',
-            'id_app_p_linea' => 'Id App P Linea',
-            'id_app_t_entidad' => 'Id App T Entidad',
-            'id_app_p_nivel' => 'Id App P Nivel',
+            'linea_descripcion' => 'Línea Descripcion',
+            'link_linea' => 'Link Línea',
+            'id_app_p_modalidad' => 'Modalidad',
+            'id_app_p_agente' => 'Agente',
+            'id_app_p_linea' => 'Linea',
+            'id_app_t_entidad' => 'Entidad',
+            'id_app_p_nivel' => 'Nivel',
         ];
     }
 

@@ -44,8 +44,8 @@ class entidad extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'entidad' => 'Entidad',
-            'descripcion' => 'Descripcion',
-            'pais' => 'Pais',
+            'descripcion' => 'Descripción',
+            'pais' => 'País',
         ];
     }
 
