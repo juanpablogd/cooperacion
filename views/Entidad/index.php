@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\entidadSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Entidads';
+$this->title = 'Entidades';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="entidad-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Entidad', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Entidad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'entidad',
             'descripcion',
             'pais',
