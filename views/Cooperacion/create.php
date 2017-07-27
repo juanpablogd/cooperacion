@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\cooperacion */
 
-$this->title = 'Create Cooperacion';
+$this->title = 'Crear Cooperacion';
 $this->params['breadcrumbs'][] = ['label' => 'Cooperacions', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
