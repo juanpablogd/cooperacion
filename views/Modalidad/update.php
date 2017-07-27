@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\modalidad */
 
-$this->title = 'Update Modalidad: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Modalidads', 'url' => ['index']];
+$this->title = 'Actualizar Modalidad: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Modalidades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\modalidad */
 
-$this->title = 'Create Modalidad';
-$this->params['breadcrumbs'][] = ['label' => 'Modalidads', 'url' => ['index']];
+$this->title = 'Crear Modalidad';
+$this->params['breadcrumbs'][] = ['label' => 'Modalidades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="modalidad-create">

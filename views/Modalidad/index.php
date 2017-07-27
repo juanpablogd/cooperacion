@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\modalidadSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Modalidads';
+$this->title = 'Modalidades';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="modalidad-index">
@@ -16,15 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Modalidad', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Modalidad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'descripcion',
 
             ['class' => 'yii\grid\ActionColumn'],
