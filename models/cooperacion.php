@@ -71,7 +71,7 @@ class cooperacion extends \yii\db\ActiveRecord
      */
     public function getIdAppPAgente()
     {
-        return $this->hasOne(CooperacionAppPAgente::className(), ['id' => 'id_app_p_agente']);
+        return $this->hasOne(agente::className(), ['id' => 'id_app_p_agente']);
     }
 
     /**
@@ -79,7 +79,7 @@ class cooperacion extends \yii\db\ActiveRecord
      */
     public function getIdAppPLinea()
     {
-        return $this->hasOne(CooperacionAppPLinea::className(), ['id' => 'id_app_p_linea']);
+        return $this->hasOne(linea::className(), ['id' => 'id_app_p_linea']);
     }
 
     /**
@@ -87,7 +87,7 @@ class cooperacion extends \yii\db\ActiveRecord
      */
     public function getIdAppPModalidad()
     {
-        return $this->hasOne(CooperacionAppPModalidad::className(), ['id' => 'id_app_p_modalidad']);
+        return $this->hasOne(modalidad::className(), ['id' => 'id_app_p_modalidad']);
     }
 
     /**
@@ -95,7 +95,7 @@ class cooperacion extends \yii\db\ActiveRecord
      */
     public function getIdAppPNivel()
     {
-        return $this->hasOne(CooperacionAppPNivel::className(), ['id' => 'id_app_p_nivel']);
+        return $this->hasOne(nivel::className(), ['id' => 'id_app_p_nivel']);
     }
 
     /**
@@ -103,6 +103,6 @@ class cooperacion extends \yii\db\ActiveRecord
      */
     public function getIdAppTEntidad()
     {
-        return $this->hasOne(CooperacionAppTEntidad::className(), ['id' => 'id_app_t_entidad']);
+        return $this->hasOne(entidad::className(), ['id' => 'id_app_t_entidad']);
     }
 }

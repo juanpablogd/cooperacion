@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Seguro que desea eliminar este elemento?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,12 +30,44 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'linea_descripcion',
-            'link_linea',
-            'id_app_p_modalidad',
-            'id_app_p_agente',
-            'id_app_p_linea',
-            'id_app_t_entidad',
-            'id_app_p_nivel',
+            [
+             'label'=>'Enlace',
+             'attribute'=>'link_linea',
+             'format' => 'raw',
+             'value'=>function ($data) {
+                         return Html::a($data->link_linea, $data->link_linea, ['target'=>'_blank']);
+                     },
+            ],
+            [
+             'attribute' => 'id_app_p_modalidad',
+                'value' => function($model) {
+                    return $model->idAppPModalidad['descripcion'];
+                },
+            ],
+            [
+             'attribute' => 'id_app_p_agente',
+                'value' => function($model) {
+                    return $model->idAppPAgente['descripcion'];
+                },
+            ],
+            [
+             'attribute' => 'id_app_p_linea',
+                'value' => function($model) {
+                    return $model->idAppPLinea['descripcion'];
+                },
+            ],
+            [
+             'attribute' => 'id_app_t_entidad',
+                'value' => function($model) {
+                    return $model->idAppTEntidad['entidad'];
+                },
+            ],
+            [
+             'attribute' => 'id_app_p_nivel',
+                'value' => function($model) {
+                    return $model->idAppPNivel['descripcion'];
+                },
+            ]
         ],
     ]) ?>
 

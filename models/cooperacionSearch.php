@@ -18,8 +18,8 @@ class cooperacionSearch extends cooperacion
     public function rules()
     {
         return [
-            [['id', 'id_app_p_modalidad', 'id_app_p_agente', 'id_app_p_linea', 'id_app_t_entidad', 'id_app_p_nivel'], 'integer'],
-            [['linea_descripcion', 'link_linea'], 'safe'],
+            [['id', 'id_app_p_modalidad', 'id_app_p_agente', 'id_app_p_linea', 'id_app_p_nivel'], 'integer'],
+            [['linea_descripcion', 'link_linea', 'id_app_t_entidad'], 'safe'],
         ];
     }
 
@@ -47,6 +47,7 @@ class cooperacionSearch extends cooperacion
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['attributes' => ['linea_descripcion', 'link_linea', 'id_app_t_entidad']]
         ]);
 
         $this->load($params);
@@ -57,18 +58,12 @@ class cooperacionSearch extends cooperacion
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'id_app_p_modalidad' => $this->id_app_p_modalidad,
-            'id_app_p_agente' => $this->id_app_p_agente,
-            'id_app_p_linea' => $this->id_app_p_linea,
-            'id_app_t_entidad' => $this->id_app_t_entidad,
-            'id_app_p_nivel' => $this->id_app_p_nivel,
-        ]);
+        $query->joinWith('idAppTEntidad');
 
-        $query->andFilterWhere(['like', 'linea_descripcion', $this->linea_descripcion])
-            ->andFilterWhere(['like', 'link_linea', $this->link_linea]);
+        $query->andFilterWhere(['like', 'LOWER(linea_descripcion)', strtolower($this->linea_descripcion)])
+            ->andFilterWhere(['like', 'LOWER(link_linea)', strtolower($this->link_linea)])
+            ->andFilterWhere(['like', 'LOWER(app_t_entidad.entidad)', strtolower($this->id_app_t_entidad)])
+            ;
 
         return $dataProvider;
     }

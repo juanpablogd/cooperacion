@@ -23,14 +23,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             'linea_descripcion',
-            'link_linea',
-            'id_app_p_modalidad',
-            'id_app_p_agente',
-            // 'id_app_p_linea',
-            // 'id_app_t_entidad',
-            // 'id_app_p_nivel',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+             'label'=>'Enlace',
+             'attribute'=>'link_linea',
+             'format' => 'raw',
+             'value'=>function ($data) {
+                         return Html::a($data->link_linea, $data->link_linea, ['target'=>'_blank']);
+                     },
+            ],[
+                'label' => 'entidad',
+                'format' => 'ntext',
+                'attribute'=>'id_app_t_entidad',
+                'value' => function($model) {
+                    return $model->idAppTEntidad['entidad'];
+                },
+            ],
+            ['class' => 'yii\grid\ActionColumn'],   
         ],
     ]); ?>
 </div>
